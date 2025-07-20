@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevXpert — Websites That Work as Hard as You Do</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900;700;500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #133d5c;
+      --secondary: #1da1f2;
+      --accent: #fff;
+      --body: #ecf0f8;
+      --highlight: #a78bfa;
+      --button-bg: linear-gradient(90deg, #1da1f2 30%, #a78bfa 100%);
+      --button-hover: linear-gradient(90deg, #138dc9 30%, #7c5dfa 100%);
+    }
+    body {
+      margin: 0;
+      background: var(--primary);
+      color: var(--body);
+      font-family: 'Space Grotesk', 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 270px;
+      background: #172e41;
+      border-radius: 0 0 50px 50px;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 2px 26px #0002;
+      overflow: hidden;
+    }
+    .header-logo img {
+      height: 220px;
+      max-width: 98vw;
+      border-radius: 36px;
+      background: #fff3;
+      box-shadow: 0 12px 38px #0002;
+      display: block;
+      object-fit: contain;
+    }
+    .headline {
+      text-align: center;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .subheadline {
+      text-align: center;
+      font-size: 1.18rem;
+      margin-bottom: 2.3rem;
+      color: var(--body);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+      margin: 2.2rem 0 2.8rem 0;
+      border-radius: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px #0002;
+      background: #fff3;
+      transition: transform 0.18s;
+    }
+    .gallery img:hover {
+      transform: scale(1.045);
+      z-index: 2;
+    }
+    .quotes {
+      margin: 1.5rem 0 2.5rem 0;
+      text-align: center;
+    }
+    .quotes blockquote {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 1.13rem;
+      color: var(--highlight);
+      font-weight: 600;
+      margin: 0.8rem auto;
+      background: rgba(167,139,250,0.07);
+      border-left: 4px solid var(--highlight);
+      padding: 0.7rem 1.3rem 0.7rem 1.5rem;
+      border-radius: 0 20px 20px 0;
+      max-width: 505px;
+      text-align: left;
+    }
+    h2, h3 {
+      font-family: 'Poppins', Arial, sans-serif;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1.38rem;
+      margin-top: 2.6rem;
+      letter-spacing: -0.5px;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    ul, ol {
+      margin-left: 1.2rem;
+      font-size: 1.06rem;
+      line-height: 1.7;
+    }
+    li {
+      margin-bottom: 0.45rem;
+      font-family: 'Space Grotesk', Arial, sans-serif;
+    }
+    .bullet {
+      font-family: 'Poppins', Arial, sans-serif;
+      color: var(--secondary);
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-right: 0.4em;
+    }
+    .form-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem 1.3rem 1.3rem 1.3rem;
+      box-shadow: 0 4px 20px #0002;
+      color: #222b39;
+      margin-top: 2.5rem;
+    }
+    .form-section label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #133d5c;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 1.03rem;
+    }
+    .form-section input,
+    .form-section select,
+    .form-section textarea {
+      width: 100%;
+      margin-bottom: 1.1rem;
+      border: 1.5px solid #e5e8f3;
+      border-radius: 9px;
+      padding: 0.8rem 1.1rem;
+      font-size: 1.07rem;
+      font-family: 'Space Grotesk', Arial, sans-serif;
+      background: #f4f7fa;
+      transition: border-color 0.2s;
+    }
+    .form-section input:focus,
+    .form-section textarea:focus,
+    .form-section select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    .form-section button {
+      display: block;
+      width: 100%;
+      font-size: 1.09rem;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: #fff;
+      background: var(--button-bg);
+      padding: 1.1rem 0;
+      margin-top: 0.6rem;
+      border: none;
+      border-radius: 10px;
+      transition: background 0.25s, transform 0.10s;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #1da1f226;
+    }
+    .form-section button:hover {
+      background: var(--button-hover);
+      transform: scale(1.03);
+    }
+    @media (max-width: 700px) {
+      .container { padding: 0.18rem 0.02rem 2rem 0.02rem;}
+      .header-logo { height: 140px; border-radius: 0 0 18px 18px; }
+      .header-logo img { height: 99px; border-radius: 14px;}
+      .headline { font-size: 1.11rem;}
+      .quotes blockquote { font-size: 0.98rem; padding: 0.5rem 0.8rem 0.5rem 1.0rem;}
+      h2 { font-size: 1rem;}
+      .gallery { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 9px; }
+      .form-section { padding: 1.2rem 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header-logo">
+      <img src="https://i.postimg.cc/vZMqhrrK/IMG-20250719-WA0024.jpg" alt="DevXpert Logo">
+    </header>
+    <div class="headline">🚀 Websites That Work as Hard as You Do</div>
+    <div class="subheadline">
+      At DevXpert, we help individuals, startups, and local businesses bring their ideas to life online.<br>
+      Modern, responsive, affordable websites built for growth.
+    </div>
+    <div class="gallery">
+      <img src="https://i.postimg.cc/xT7Bf0Qv/0eea607fc451a0100a8ddce0fa93aa2f.jpg" alt="DevXpert Work 1">
+      <img src="https://i.postimg.cc/4y2qhG9T/29dddbb74db0c68adc5358271281e03a.jpg" alt="DevXpert Work 2">
+      <img src="https://i.postimg.cc/c46VGvp1/6272c841af15f45303c1043df38577c9.jpg" alt="DevXpert Work 3">
+      <img src="https://i.postimg.cc/L4xrWt00/670957e4c6d586be0c22d22f4541c0fd.jpg" alt="DevXpert Work 4">
+      <img src="https://i.postimg.cc/nLf5m0CM/cbf86e3cb7510088dcef601b0288e4b3.jpg" alt="DevXpert Work 5">
+      <img src="https://i.postimg.cc/7hZj6hbV/e99cf5f1299f0b059990bc8cfed1919a.jpg" alt="DevXpert Work 6">
+    </div>
+    <div class="quotes">
+      <blockquote>“If you’re not online, you’re invisible. Let’s change that.”</blockquote>
+      <blockquote>“Design is intelligence made visible.”</blockquote>
+      <blockquote>“Make your first impression unforgettable — make it digital.”</blockquote>
+    </div>
+    <section>
+      <h2>Who We Are</h2>
+      <p>
+        <strong>DevXpert believes a bold, stylish digital presence should be for everyone, not just massive brands.</strong>
+        Our youthful team brings energy, creativity, and GenZ design vibes — for creators, small businesses, and anyone ready to stand out.
+      </p>
+      <p>
+        <strong>Our mission:</strong> Build sites that <span style="color:var(--secondary);font-weight:700;">look next-level</span>, work super-smooth, and grow your brand fast.<br>
+        We keep the process simple, clear, and totally jargon-free.
+      </p>
+    </section>
+    <section>
+      <h2>Why Work With Us?</h2>
+      <ul>
+        <li><span class="bullet">•</span> Edgy, modern designs inspired by GenZ aesthetics</li>
+        <li><span class="bullet">•</span> Websites that pop on any device (mobile-first!)</li>
+        <li><span class="bullet">•</span> Honest, transparent pricing — no surprises</li>
+        <li><span class="bullet">•</span> Blazing-fast turnarounds (3–5 days)</li>
+        <li><span class="bullet">•</span> Friendly, real support. Whenever, wherever</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Our Process</h2>
+      <ol>
+        <li>DM or form us your idea</li>
+        <li>We vibe on your vision &amp; budget</li>
+        <li>Our team crafts, codes, and delivers your site in record time</li>
+        <li>You review. Want tweaks? Easy</li>
+        <li>We launch, you own it — zero stress</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Ready to Stand Out?</h2>
+      <p>
+        No matter your goal &mdash; landing page, portfolio, shop, or something wild &mdash; <strong>we build it together!</strong>
+      </p>
+      <blockquote style="margin-top:1.2rem;">“The future belongs to those who create it online.”</blockquote>
+    </section>
+    <form class="form-section">
+      <h2 style="color:#1da1f2;font-size:1.19rem;margin-bottom:1rem;font-weight:900;font-family:'Poppins',Arial,sans-serif;">Contact Us</h2>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+
+      <label for="whatsapp">WhatsApp Number (optional)</label>
+      <input type="text" id="whatsapp" name="whatsapp" autocomplete="tel">
+
+      <label for="service">Choose Service</label>
+      <select id="service" name="service" required>
+        <option value="">Select one…</option>
+        <option value="landing">Landing Page</option>
+        <option value="business">Business Website</option>
+        <option value="portfolio">Portfolio</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Project Idea / Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
